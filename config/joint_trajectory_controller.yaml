@@ -1,0 +1,10 @@
+# Controller to control robot arm joints
+robot_arm1_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints: arm1_joint
+robot_arm2_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints: arm1_joint
+joint_state_controller:
+  type: "joint_state_controller/JointStateController"
+  publish_rate: 50

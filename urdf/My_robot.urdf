@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="My_robot">
+  <!---gazebo-->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/My_robot</robotNamespace>
+    </plugin>
+  </gazebo>
+  <gazebo reference="base_link">
+    <kp>100000.0</kp>
+    <kd>100.0</kd>
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.001</minDepth>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="lidar_Link">
+    <kp>100000.0</kp>
+    <kd>100.0</kd>
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.001</minDepth>
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="font_wheel_Link">
+    <kp>100000.0</kp>
+    <kd>100.0</kd>
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.001</minDepth>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="right_wheel_Link">
+    <kp>100000.0</kp>
+    <kd>100.0</kd>
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.001</minDepth>
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="left_wheel_Link">
+    <kp>100000.0</kp>
+    <kd>100.0</kd>
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.001</minDepth>
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="arm_Link">
+    <kp>100000.0</kp>
+    <kd>100.0</kd>
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.001</minDepth>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="arm1_Link">
+    <kp>100000.0</kp>
+    <kd>100.0</kd>
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.001</minDepth>
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <gazebo reference="arm2_Link">
+    <kp>100000.0</kp>
+    <kd>100.0</kd>
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.001</minDepth>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="camera_Link">
+    <kp>100000.0</kp>
+    <kd>100.0</kd>
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.001</minDepth>
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  <gazebo reference="right_odom_Link">
+    <kp>100000.0</kp>
+    <kd>100.0</kd>
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.001</minDepth>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="font_odom_Link">
+    <kp>100000.0</kp>
+    <kd>100.0</kd>
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.001</minDepth>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="left_odom_Link">
+    <kp>100000.0</kp>
+    <kd>100.0</kd>
+    <mu1>1.5</mu1>
+    <mu2>1.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <maxVel>1.0</maxVel>
+    <minDepth>0.001</minDepth>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <!--Robot-->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="3.90879417278001E-07 1.11577413974828E-14 0.0439890655400512" rpy="0 0 0" />
+      <mass value="1.04484151447671" />
+      <inertia ixx="0.00585605726577215" ixy="-2.73721501945711E-18" ixz="-6.76359904158392E-19" iyy="0.0058560534010825" iyz="-3.56355978001737E-19" izz="0.0114863693933343" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/base_link.STL" />
+      </geometry>
+      <material name="grey">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="font_wheel_Link">
+    <inertial>
+      <origin xyz="-1.3878E-16 -1.8874E-15 -0.015" rpy="0 0 0" />
+      <mass value="0.20892" />
+      <inertia ixx="4.9248E-05" ixy="4.8731E-20" ixz="9.4402E-22" iyy="4.9248E-05" iyz="-1.1487E-20" izz="9.2317E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/font_wheel_Link.STL" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0.0 0.0 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/font_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="font_wheel_joint" type="continuous">
+    <origin xyz="0.1799 0 0.02" rpy="1.5708 0 1.5708" />
+    <parent link="base_link" />
+    <child link="font_wheel_Link" />
+    <axis xyz="0 0 -1" />
+  </joint>
+
+  <link name="font_odom_Link">
+    <inertial>
+      <origin xyz="0 0 0.015066" rpy="0 0 0" />
+      <mass value="0.0090385" />
+      <inertia ixx="8.5308E-07" ixy="-1.1305E-23" ixz="2.2448E-22" iyy="9.8433E-07" iyz="2.5042E-23" izz="4.6899E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/font_odom_Link.STL" />
+      </geometry>
+      <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/font_odom_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="font_odom_joint" type="fixed">
+    <origin xyz="0 0 -0.081" rpy="0 0 -3.14159265358979" />
+    <parent link="font_wheel_Link" />
+    <child link="font_odom_Link" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+
+  <link name="right_wheel_Link">
+    <inertial>
+      <origin xyz="2.2149E-14 2.0151E-14 -0.015" rpy="0 0 0" />
+      <mass value="0.20892" />
+      <inertia ixx="4.9248E-05" ixy="-1.0094E-20" ixz="2.3717E-20" iyy="4.9248E-05" iyz="-2.4658E-20" izz="9.2317E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/right_wheel_Link.STL" />
+      </geometry>
+      <material name="green">
+        <color rgba="0.0 0.8 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/right_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_wheel_joint" type="continuous">
+    <origin xyz="-0.089952 -0.1558 0.02" rpy="1.5708 0 -0.5236" />
+    <parent link="base_link" />
+    <child link="right_wheel_Link" />
+    <axis xyz="0 0 -1" />
+  </joint>
+
+
+
+  <link name="right_odom_Link">
+    <inertial>
+      <origin xyz="-1.11022302462516E-16 5.55111512312578E-17 0.0150659966728316" rpy="0 0 0" />
+      <mass value="0.00903848451000651" />
+      <inertia ixx="8.53077601714409E-07" ixy="9.20118597973462E-23" ixz="1.12496563307212E-21" iyy="9.8432760171441E-07" iyz="-1.69440086344285E-22" izz="4.68985717623792E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/right_odom_Link.STL" />
+      </geometry>
+      <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/right_odom_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_odom_joint" type="fixed">
+    <origin xyz="0 0 -0.0810000000000007" rpy="0 0 0" />
+    <parent link="right_wheel_Link" />
+    <child link="right_odom_Link" />
+    <axis xyz="-0.866025403784442 0 0.499999999999994" />
+  </joint>
+
+
+
+
+
+  <link name="left_wheel_Link">
+    <inertial>
+      <origin xyz="9.99200722162641E-16 1.66533453693773E-15 -0.0149999999999999" rpy="0 0 0" />
+      <mass value="0.208921365228656" />
+      <inertia ixx="4.92480864989309E-05" ixy="1.76501550538467E-20" ixz="-3.3881317890172E-21" iyy="4.92480864989306E-05" iyz="1.02418066947516E-20" izz="9.23169288151233E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/left_wheel_Link.STL" />
+      </geometry>
+      <material name="red">
+        <color rgba="0.8 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/left_wheel_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_wheel_joint" type="continuous">
+    <origin xyz="-0.089952 0.1558 0.02" rpy="1.5708 0 -2.618" />
+    <parent link="base_link" />
+    <child link="left_wheel_Link" />
+    <axis xyz="0 0 -1" />
+  </joint>
+
+
+  <link name="left_odom_Link">
+    <inertial>
+      <origin xyz="0 0 0.015066" rpy="0 0 0" />
+      <mass value="0.0090385" />
+      <inertia ixx="8.5308E-07" ixy="-4.8937E-23" ixz="-4.3675E-22" iyy="9.8433E-07" iyz="-7.4973E-23" izz="4.6899E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/left_odom_Link.STL" />
+      </geometry>
+      <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/left_odom_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_odom_joint" type="fixed">
+    <origin xyz="0 0 -0.0809999999999999" rpy="0 0 0" />
+    <parent link="left_wheel_Link" />
+    <child link="left_odom_Link" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+
+
+  <link name="lidar_Link">
+    <inertial>
+      <origin xyz="-0.00829409957033955 7.82707232360735E-14 -0.00854885777715414" rpy="0 0 0" />
+      <mass value="0.146695752131392" />
+      <inertia ixx="6.22721120792819E-05" ixy="1.71640368936764E-19" ixz="-1.88658076337422E-05" iyy="0.000109673997590949" iyz="-1.60699862691652E-19" izz="0.000125682524275729" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/lidar_Link.STL" />
+      </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/lidar_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="lidar_joint" type="fixed">
+    <origin xyz="0 0 0.0962499999999427" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="lidar_Link" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+
+
+  <link name="arm_Link">
+    <inertial>
+      <origin xyz="-1.1102E-16 -1.1102E-16 0.089524" rpy="0 0 0" />
+      <mass value="0.44715" />
+      <inertia ixx="0.00073659" ixy="8.6223E-20" ixz="-1.3961E-22" iyy="0.00073659" iyz="6.0765E-22" izz="0.00079837" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/arm_Link.STL" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0.0 0.0 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/arm_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arm_joint" type="fixed">
+    <origin xyz="0 0 0.135" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="arm_Link" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+
+  <link name="arm1_Link">
+    <inertial>
+      <origin xyz="0.0346617299457402 1.02695629777827E-15 0.0149736149476148" rpy="0 0 0" />
+      <mass value="0.155903532832756" />
+      <inertia ixx="0.000103298611136068" ixy="1.53504463235121E-18" ixz="6.95815988584628E-09" iyy="0.000525260211617603" iyz="-3.72382769845771E-23" izz="0.000627153239789967" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/arm1_Link.STL" />
+      </geometry>
+      <material name="green">
+        <color rgba="0.0 0.8 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/arm1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arm1_joint" type="prismatic">
+    <origin xyz="0 0 0.15396" rpy="0 0 0" />
+    <parent link="arm_Link" />
+    <child link="arm1_Link" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="0.1" effort="2" velocity="2" />
+    <dynamics friction="0.1" />
+  </joint>
+  <link name="arm2_Link">
+    <inertial>
+      <origin xyz="0.060877 0.0021211 0.0095" rpy="0 0 0" />
+      <mass value="0.033192" />
+      <inertia ixx="3.0913E-06" ixy="-2.7135E-06" ixz="3.3629E-22" iyy="8.0876E-05" iyz="1.4466E-23" izz="8.3862E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/arm2_Link.STL" />
+      </geometry>
+      <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/arm2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="arm2_joint" type="revolute">
+    <origin xyz="0.15062 0 0.005" rpy="0 0 0" />
+    <parent link="arm1_Link" />
+    <child link="arm2_Link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1" upper="1" effort="2" velocity="2" />
+    <dynamics friction="0.1" />
+  </joint>
+  <link name="camera_Link">
+    <inertial>
+      <origin xyz="0 0 -0.00329934435209411" rpy="0 0 0" />
+      <mass value="0.00195707963267948" />
+      <inertia ixx="9.70370579973821E-08" ixy="1.30119467975669E-23" ixz="-2.64697796016969E-23" iyy="8.96870579973829E-08" iyz="6.70724807977344E-25" izz="1.82113495408492E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/camera_Link.STL" />
+      </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://My_robot/meshes/camera_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0.154906002898303 0.00539724615623074 0.00950000000000017" rpy="-1.5707963267949 0 -1.53596834328829" />
+    <parent link="arm2_Link" />
+    <child link="camera_Link" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+
+<!-- Transmission cho khop1 -->
+        <transmission name="arm1_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="arm1_motor">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+            <joint name="arm1_joint">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+        
+  <!-- Transmission cho khop2 -->
+        <transmission name="arm2_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="arm2_motor">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+            <joint name="arm2_joint">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+
+  <gazebo>
+            <plugin name ="gazebo_ros_control" filename = "libgazebo_ros_control.so">
+                <robotNamespace>/</robotNamespace>
+            </plugin>
+        </gazebo>
+
+
+
+</robot>

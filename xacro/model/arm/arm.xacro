@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="arm">
+        <link name="arm_Link">
+            <inertial>
+                <origin xyz="-1.1102E-16 -1.1102E-16 0.089524" rpy="0 0 0" />
+                <mass value="0.44715" />
+                <inertia ixx="0.00073659" ixy="8.6223E-20" ixz="-1.3961E-22" iyy="0.00073659" iyz="6.0765E-22" izz="0.00079837" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/arm_Link.STL" />
+                </geometry>
+                <material name="blue">
+                    <color rgba="0.0 0.0 0.8 1.0"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/arm_Link.STL" />
+                </geometry>
+            </collision>
+        </link>
+        <joint name="arm_joint" type="fixed">
+            <origin xyz="0 0 0.135" rpy="0 0 0" />
+            <parent link="base_link" />
+            <child link="arm_Link" />
+            <axis xyz="0 0 0" />
+        </joint>
+        <link name="arm1_Link">
+            <inertial>
+                <origin xyz="0.0346617299457402 1.02695629777827E-15 0.0149736149476148" rpy="0 0 0" />
+                <mass value="0.155903532832756" />
+                <inertia ixx="0.000103298611136068" ixy="1.53504463235121E-18" ixz="6.95815988584628E-09" iyy="0.000525260211617603" iyz="-3.72382769845771E-23" izz="0.000627153239789967" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/arm1_Link.STL" />
+                </geometry>
+                <material name="green">
+                    <color rgba="0.0 0.8 0.0 1.0"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/arm1_Link.STL" />
+                </geometry>
+            </collision>
+        </link>
+        <joint name="arm1_joint" type="prismatic">
+            <origin xyz="0 0 0.15396" rpy="0 0 0" />
+            <parent link="arm_Link" />
+            <child link="arm1_Link" />
+            <axis xyz="0 0 1" />
+            <limit lower="0" upper="0.1" effort="2" velocity="2" />
+            <dynamics friction="0.01" />
+        </joint>
+        <link name="arm2_Link">
+            <inertial>
+                <origin xyz="0.060877 0.0021211 0.0095" rpy="0 0 0" />
+                <mass value="0.033192" />
+                <inertia ixx="3.0913E-06" ixy="-2.7135E-06" ixz="3.3629E-22" iyy="8.0876E-05" iyz="1.4466E-23" izz="8.3862E-05" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/arm2_Link.STL" />
+                </geometry>
+                <material name="white">
+                    <color rgba="1.0 1.0 1.0 1.0"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/arm2_Link.STL" />
+                </geometry>
+            </collision>
+        </link>
+        <joint name="arm2_joint" type="revolute">
+            <origin xyz="0.15062 0 0.005" rpy="0 0 0" />
+            <parent link="arm1_Link" />
+            <child link="arm2_Link" />
+            <axis xyz="0 0 1" />
+            <limit lower="-1" upper="1" effort="2" velocity="2" />
+            <dynamics friction="0.01" />
+        </joint>
+    </xacro:macro>
+</robot>

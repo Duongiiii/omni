@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!-- Overwriting these args -->
+    <arg name="debug" default="false"/>
+    <arg name="gui" default="true"/>
+    <arg name="pause" default="false"/>
+    <arg name="world" default="$(find My_robot)/world/empty_world.world"/>
+    <!-- Include gazebo_ros launcher -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg world)"/>
+        <arg name="debug" value="$(arg debug)"/>
+        <arg name="gui" value="$(arg gui)"/>
+        <arg name="paused" value="$(arg pause)"/>
+        <arg name="use_sim_time" value="true"/>
+    </include>
+    <!-- Convert XACRO to URDF and load into parameter server -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find My_robot)/xacro/my_robot.xacro"/>
+    <!-- Spawn the robot in Gazebo -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen" args="-param robot_description -urdf -model My_robot"/>
+    
+    <!-- Load controller configuration -->
+    <rosparam file="$(find My_robot)/config/joint_trajectory_controller.yaml" command="load"/>
+    <!-- <rosparam file="$(find My_robot)/config/gazebo_ros_control.yaml" command="load"/> -->
+    <!-- Start the controller manager -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller 
+                robot_arm_controller"/>
+</launch>

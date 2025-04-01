@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="wheel">
+        <!-- font -->
+        <link name="font_wheel_Link">
+            <inertial>
+                <origin xyz="-1.3878E-16 -1.8874E-15 -0.015" rpy="0 0 0" />
+                <mass value="0.20892" />
+                <inertia ixx="4.9248E-05" ixy="4.8731E-20" ixz="9.4402E-22" iyy="4.9248E-05" iyz="-1.1487E-20" izz="9.2317E-05" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/font_wheel_Link.STL" />
+                </geometry>
+                <material name="blue">
+                    <color rgba="0.0 0.0 0.8 1.0"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/font_wheel_Link.STL" />
+                </geometry>
+            </collision>
+        </link>
+        <joint name="font_wheel_joint" type="continuous">
+            <origin xyz="0.1799 0 0.02" rpy="1.5708 0 1.5708" />
+            <parent link="base_link" />
+            <child link="font_wheel_Link" />
+            <axis xyz="0 0 -1" />
+        </joint>
+        <!-- right -->
+        <link name="right_wheel_Link">
+            <inertial>
+                <origin xyz="2.2149E-14 2.0151E-14 -0.015" rpy="0 0 0" />
+                <mass value="0.20892" />
+                <inertia ixx="4.9248E-05" ixy="-1.0094E-20" ixz="2.3717E-20" iyy="4.9248E-05" iyz="-2.4658E-20" izz="9.2317E-05" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/right_wheel_Link.STL" />
+                </geometry>
+                <material name="green">
+                    <color rgba="0.0 0.8 0.0 1.0"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/right_wheel_Link.STL" />
+                </geometry>
+            </collision>
+        </link>
+        <joint name="right_wheel_joint" type="continuous">
+            <origin xyz="-0.089952 -0.1558 0.02" rpy="1.5708 0 -0.5236" />
+            <parent link="base_link" />
+            <child link="right_wheel_Link" />
+            <axis xyz="0 0 -1" />
+        </joint>
+        <!-- left -->
+        <link name="left_wheel_Link">
+            <inertial>
+                <origin xyz="9.99200722162641E-16 1.66533453693773E-15 -0.0149999999999999" rpy="0 0 0" />
+                <mass value="0.208921365228656" />
+                <inertia ixx="4.92480864989309E-05" ixy="1.76501550538467E-20" ixz="-3.3881317890172E-21" iyy="4.92480864989306E-05" iyz="1.02418066947516E-20" izz="9.23169288151233E-05" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/left_wheel_Link.STL" />
+                </geometry>
+                <material name="red">
+                    <color rgba="0.8 0.0 0.0 1.0"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/left_wheel_Link.STL" />
+                </geometry>
+            </collision>
+        </link>
+        <joint name="left_wheel_joint" type="continuous">
+            <origin xyz="-0.089952 0.1558 0.02" rpy="1.5708 0 -2.618" />
+            <parent link="base_link" />
+            <child link="left_wheel_Link" />
+            <axis xyz="0 0 -1" />
+        </joint>
+    </xacro:macro>
+</robot>

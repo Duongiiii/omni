@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="odom">
+        <!-- font -->
+        <link name="font_odom_Link">
+            <inertial>
+                <origin xyz="0 0 0.015066" rpy="0 0 0" />
+                <mass value="0.0090385" />
+                <inertia ixx="8.5308E-07" ixy="-1.1305E-23" ixz="2.2448E-22" iyy="9.8433E-07" iyz="2.5042E-23" izz="4.6899E-07" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/font_odom_Link.STL" />
+                </geometry>
+                <material name="white">
+                    <color rgba="1.0 1.0 1.0 1.0"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/font_odom_Link.STL" />
+                </geometry>
+            </collision>
+        </link>
+        <joint name="font_odom_joint" type="fixed">
+            <origin xyz="0 0 -0.081" rpy="0 0 -3.14159265358979" />
+            <parent link="font_wheel_Link" />
+            <child link="font_odom_Link" />
+            <axis xyz="0 0 0" />
+        </joint>
+        <!-- right -->
+        <link name="right_odom_Link">
+            <inertial>
+                <origin xyz="-1.11022302462516E-16 5.55111512312578E-17 0.0150659966728316" rpy="0 0 0" />
+                <mass value="0.00903848451000651" />
+                <inertia ixx="8.53077601714409E-07" ixy="9.20118597973462E-23" ixz="1.12496563307212E-21" iyy="9.8432760171441E-07" iyz="-1.69440086344285E-22" izz="4.68985717623792E-07" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/right_odom_Link.STL" />
+                </geometry>
+                <material name="white">
+                    <color rgba="1.0 1.0 1.0 1.0"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/right_odom_Link.STL" />
+                </geometry>
+            </collision>
+        </link>
+        <joint name="right_odom_joint" type="fixed">
+            <origin xyz="0 0 -0.0810000000000007" rpy="0 0 0" />
+            <parent link="right_wheel_Link" />
+            <child link="right_odom_Link" />
+            <axis xyz="-0.866025403784442 0 0.499999999999994" />
+        </joint>
+        <!-- left -->
+        <link name="left_odom_Link">
+            <inertial>
+                <origin xyz="0 0 0.015066" rpy="0 0 0" />
+                <mass value="0.0090385" />
+                <inertia ixx="8.5308E-07" ixy="-4.8937E-23" ixz="-4.3675E-22" iyy="9.8433E-07" iyz="-7.4973E-23" izz="4.6899E-07" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/left_odom_Link.STL" />
+                </geometry>
+                <material name="white">
+                    <color rgba="1.0 1.0 1.0 1.0"/>
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://My_robot/meshes/left_odom_Link.STL" />
+                </geometry>
+            </collision>
+        </link>
+        <joint name="left_odom_joint" type="fixed">
+            <origin xyz="0 0 -0.0809999999999999" rpy="0 0 0" />
+            <parent link="left_wheel_Link" />
+            <child link="left_odom_Link" />
+            <axis xyz="0 0 0" />
+        </joint>
+    </xacro:macro>
+</robot>

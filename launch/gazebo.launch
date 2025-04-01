@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<launch>
+
+    <!-- Overwriting these args -->
+    <arg name="debug" default="false" />
+    <arg name="gui" default="true" />
+    <arg name="pause" default="false" />
+    <arg name="world" default="$(find My_robot)/world/empty_world.world" />
+
+    <!-- Include gazebo_ros launcher -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg world)" />
+        <arg name="debug" value="$(arg debug)" />
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="$(arg pause)" />
+        <arg name="use_sim_time" value="true" />
+    </include>
+
+    <!-- Load the URDF file into the parameter server -->
+    <param name="robot_description" command="cat $(find My_robot)/urdf/My_robot.urdf" />
+
+    <!-- Spawn the robot in Gazebo -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
+          args="-param robot_description -urdf -model My_robot" />
+
+</launch>

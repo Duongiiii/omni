@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="transmission">
+
+        <!-- Transmission cho bánh trước -->
+        <transmission name="font_wheel_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="font_motor">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+            <joint name="font_wheel_joint">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+        <!-- Transmission cho bánh phai -->
+        <transmission name="right_wheel_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="right_motor">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+            <joint name="right_wheel_joint">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+        <!-- Transmission cho bánh trai -->
+        <transmission name="left_wheel_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="left_motor">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+            <joint name="left_wheel_joint">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+
+  <!-- Transmission cho khop1 -->
+        <transmission name="arm1_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="arm1_motor">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+            <joint name="arm1_joint">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+        
+  <!-- Transmission cho khop2 -->
+        <transmission name="arm2_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="arm2_motor">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+            <joint name="arm2_joint">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
+
+    </xacro:macro>
+</robot>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="My_robot">
+    
+<!-- =========== Model include =========-->
+<xacro:include filename="$(find My_robot)/xacro/model/base/base.xacro"/>
+<xacro:include filename="$(find My_robot)/xacro/model/wheel/wheel.xacro"/>
+<xacro:include filename="$(find My_robot)/xacro/model/arm/arm.xacro"/>
+<xacro:include filename="$(find My_robot)/xacro/model/sensor/camera.xacro"/>
+<xacro:include filename="$(find My_robot)/xacro/model/sensor/lidar.xacro"/>
+<xacro:include filename="$(find My_robot)/xacro/model/sensor/odom.xacro"/>
+
+<!-- ========= Gazebo include================== -->
+<xacro:include filename="$(find My_robot)/xacro/gazebo/arm/gazebo_arm.xacro"/>
+<xacro:include filename="$(find My_robot)/xacro/gazebo/base/gazebo_base.xacro"/>
+<xacro:include filename="$(find My_robot)/xacro/gazebo/sensor/gazebo_camera.xacro"/>
+<xacro:include filename="$(find My_robot)/xacro/gazebo/sensor/gazebo_lidar.xacro"/>
+<xacro:include filename="$(find My_robot)/xacro/gazebo/sensor/gazebo_odom.xacro"/>
+<xacro:include filename="$(find My_robot)/xacro/gazebo/wheel/gazebo_wheel.xacro"/>
+<xacro:include filename="$(find My_robot)/xacro/gazebo/plugin/plugin.xacro"/>
+<xacro:include filename="$(find My_robot)/xacro/gazebo/transmission/my_robot_transmission.xacro"/>
+
+<!-- ======= Model ===================  -->
+<xacro:base/>
+<xacro:wheel/>
+<xacro:arm/>
+<xacro:camera/>
+<xacro:lidar/>
+<xacro:odom/>
+
+<!-- ============= gazebo ==========-->
+<xacro:gazebo_base/>
+<xacro:gazebo_arm/>
+<xacro:gazebo_camera/>
+<xacro:gazebo_wheel/>
+<xacro:gazebo_lidar/>
+<xacro:gazebo_odom/>
+<xacro:gazebo_plugin/>
+<xacro:transmission/>
+</robot>
